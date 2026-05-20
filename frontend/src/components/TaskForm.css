@@ -1,0 +1,89 @@
+.form-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: -2.25rem;
+}
+
+.title-input {
+  width: 100%;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.6rem;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.title-input:focus {
+  border-color: #6366f1;
+}
+
+.desc-input {
+  width: 100%;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.6rem;
+  padding: 0.65rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #475569;
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s;
+}
+
+.desc-input:focus {
+  border-color: #6366f1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.btn-add {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.6rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.btn-add:hover:not(:disabled) {
+  background: #4f46e5;
+}
+
+.btn-add:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: #94a3b8;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-cancel:hover {
+  border-color: #cbd5e1;
+  color: #64748b;
+}
