@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
+import Spinner from './components/Spinner';
 import './App.css';
 
 const API = `${process.env.REACT_APP_API_BASE || ''}/api/tasks`;
@@ -12,12 +13,16 @@ export default function App() {
   const [error, setError] = useState(null);
   const [filter, setFilter] = useState('all'); // all | active | completed
 
-  useEffect(() => {
+  const loadTasks = useCallback(() => {
+    setLoading(true);
+    setError(null);
     fetch(API)
       .then(r => r.json())
       .then(data => { setTasks(data); setLoading(false); })
       .catch(() => { setError('Could not connect to server.'); setLoading(false); });
   }, []);
+
+  useEffect(() => { loadTasks(); }, [loadTasks]);
 
   const addTask = async ({ title, description }) => {
     const res = await fetch(API, {
@@ -79,8 +84,13 @@ export default function App() {
             </button>
           ))}
         </div>
-        {loading && <p className="state-msg">Loading tasks…</p>}
-        {error && <p className="state-msg error">{error}</p>}
+        {loading && <Spinner />}
+        {error && (
+          <div className="error-state">
+            <p className="state-msg error">{error}</p>
+            <button className="btn-retry" onClick={loadTasks}>Retry</button>
+          </div>
+        )}
         {!loading && !error && (
           <TaskList
             tasks={filtered}

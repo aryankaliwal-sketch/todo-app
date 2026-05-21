@@ -74,3 +74,27 @@
 .state-msg.error {
   color: #ef4444;
 }
+
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-retry {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-retry:hover {
+  background: #4f46e5;
+}
