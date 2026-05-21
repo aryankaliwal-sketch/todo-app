@@ -1,53 +1,55 @@
 .task-item {
   background: #fff;
-  border-radius: 0.875rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(14, 165, 233, 0.08);
   padding: 1rem 1.1rem;
   display: flex;
   align-items: flex-start;
   gap: 0.875rem;
-  transition: box-shadow 0.15s, opacity 0.2s;
-  border: 1.5px solid transparent;
+  transition: box-shadow 0.15s, border-color 0.15s;
+  border: 1.5px solid #e0f2fe;
 }
 
 .task-item:hover {
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
-  border-color: #e0e7ff;
+  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.14);
+  border-color: #bae6fd;
 }
 
 .task-item.completed {
-  opacity: 0.6;
+  opacity: 0.55;
+  background: #f0f9ff;
 }
 
 /* Checkbox */
 .checkbox {
   flex-shrink: 0;
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.4rem;
+  height: 1.4rem;
   border-radius: 50%;
-  border: 2px solid #d1d5db;
+  border: 2px solid #bae6fd;
   background: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
   margin-top: 0.1rem;
   padding: 0;
 }
 
 .task-item.completed .checkbox {
-  background: #6366f1;
-  border-color: #6366f1;
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+}
+
+.checkbox:hover {
+  border-color: #0ea5e9;
+  transform: scale(1.08);
 }
 
 .checkbox svg {
   width: 0.7rem;
   height: 0.7rem;
-}
-
-.checkbox:hover {
-  border-color: #6366f1;
 }
 
 /* Body */
@@ -59,20 +61,20 @@
 .task-title {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #1e293b;
+  color: #0c4a6e;
   line-height: 1.4;
   word-break: break-word;
 }
 
 .task-item.completed .task-title {
   text-decoration: line-through;
-  color: #94a3b8;
+  color: #7dd3fc;
 }
 
 .task-desc {
   margin-top: 0.25rem;
   font-size: 0.825rem;
-  color: #94a3b8;
+  color: #7dd3fc;
   line-height: 1.45;
   word-break: break-word;
 }
@@ -100,7 +102,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #94a3b8;
+  color: #7dd3fc;
   transition: background 0.15s, color 0.15s;
   padding: 0;
 }
@@ -111,8 +113,8 @@
 }
 
 .edit-btn:hover {
-  background: #ede9fe;
-  color: #6366f1;
+  background: #e0f2fe;
+  color: #0ea5e9;
 }
 
 .delete-btn:hover {
@@ -135,30 +137,32 @@
 
 .edit-title {
   width: 100%;
-  border: 1.5px solid #6366f1;
-  border-radius: 0.5rem;
+  border: 1.5px solid #0ea5e9;
+  border-radius: 0.6rem;
   padding: 0.5rem 0.75rem;
   font-family: inherit;
   font-size: 0.95rem;
-  color: #1e293b;
+  color: #0c4a6e;
   font-weight: 500;
   outline: none;
+  background: #f0f9ff;
 }
 
 .edit-desc {
   width: 100%;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 0.5rem;
+  border: 1.5px solid #bae6fd;
+  border-radius: 0.6rem;
   padding: 0.45rem 0.75rem;
   font-family: inherit;
   font-size: 0.85rem;
-  color: #475569;
+  color: #0369a1;
   outline: none;
   resize: none;
+  background: #f0f9ff;
 }
 
 .edit-desc:focus {
-  border-color: #6366f1;
+  border-color: #0ea5e9;
 }
 
 .edit-actions {
@@ -167,7 +171,7 @@
 }
 
 .btn-save {
-  background: #6366f1;
+  background: #0ea5e9;
   color: #fff;
   border: none;
   border-radius: 0.5rem;
@@ -180,7 +184,7 @@
 }
 
 .btn-save:hover:not(:disabled) {
-  background: #4f46e5;
+  background: #0284c7;
 }
 
 .btn-save:disabled {
@@ -190,8 +194,8 @@
 
 .btn-discard {
   background: transparent;
-  color: #94a3b8;
-  border: 1.5px solid #e2e8f0;
+  color: #7dd3fc;
+  border: 1.5px solid #bae6fd;
   border-radius: 0.5rem;
   padding: 0.4rem 0.9rem;
   font-family: inherit;
@@ -201,6 +205,6 @@
 }
 
 .btn-discard:hover {
-  color: #64748b;
-  border-color: #cbd5e1;
+  color: #0ea5e9;
+  border-color: #7dd3fc;
 }

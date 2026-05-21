@@ -1,45 +1,60 @@
 .form-card {
   background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.12);
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: -2.25rem;
+  margin-top: -2.5rem;
+  border: 1.5px solid #e0f2fe;
 }
 
 .title-input {
   width: 100%;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 0.6rem;
-  padding: 0.75rem 1rem;
+  border: 1.5px solid #bae6fd;
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
   font-family: inherit;
   font-size: 1rem;
-  color: #1e293b;
+  color: #0c4a6e;
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: #f0f9ff;
+}
+
+.title-input::placeholder {
+  color: #7dd3fc;
 }
 
 .title-input:focus {
-  border-color: #6366f1;
+  border-color: #0ea5e9;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
 }
 
 .desc-input {
   width: 100%;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 0.6rem;
-  padding: 0.65rem 1rem;
+  border: 1.5px solid #bae6fd;
+  border-radius: 0.75rem;
+  padding: 0.7rem 1rem;
   font-family: inherit;
   font-size: 0.9rem;
-  color: #475569;
+  color: #0369a1;
   outline: none;
   resize: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: #f0f9ff;
+}
+
+.desc-input::placeholder {
+  color: #7dd3fc;
 }
 
 .desc-input:focus {
-  border-color: #6366f1;
+  border-color: #0ea5e9;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
 }
 
 .form-actions {
@@ -49,20 +64,27 @@
 }
 
 .btn-add {
-  background: #6366f1;
+  background: #0ea5e9;
   color: #fff;
   border: none;
-  border-radius: 0.6rem;
-  padding: 0.6rem 1.4rem;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1.5rem;
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s, opacity 0.15s;
+  transition: background 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .btn-add:hover:not(:disabled) {
-  background: #4f46e5;
+  background: #0284c7;
+}
+
+.btn-add:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
 .btn-add:disabled {
@@ -72,10 +94,10 @@
 
 .btn-cancel {
   background: transparent;
-  color: #94a3b8;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 0.6rem;
-  padding: 0.6rem 1.1rem;
+  color: #7dd3fc;
+  border: 1.5px solid #bae6fd;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1.1rem;
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
@@ -84,6 +106,6 @@
 }
 
 .btn-cancel:hover {
-  border-color: #cbd5e1;
-  color: #64748b;
+  border-color: #7dd3fc;
+  color: #0ea5e9;
 }

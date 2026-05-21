@@ -21,7 +21,7 @@ export default function TaskForm({ onAdd }) {
         <input
           className="title-input"
           type="text"
-          placeholder="Add a new task…"
+          placeholder="What do you need to do?"
           value={title}
           onChange={e => setTitle(e.target.value)}
           onFocus={() => setExpanded(true)}
@@ -46,6 +46,9 @@ export default function TaskForm({ onAdd }) {
             </button>
           )}
           <button type="submit" className="btn-add" disabled={!title.trim()}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2v12M2 8h12" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+            </svg>
             Add Task
           </button>
         </div>
