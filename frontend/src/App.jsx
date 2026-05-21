@@ -4,7 +4,7 @@ import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import './App.css';
 
-const API = '/api/tasks';
+const API = `${process.env.REACT_APP_API_BASE || ''}/api/tasks`;
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
